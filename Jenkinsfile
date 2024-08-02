@@ -55,10 +55,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: '**/TestResults/*.trx', allowEmptyArchive: true
-            steps {
-                $class: 'MSTestPublisher', 
-                testResultsFile: '**/TestResults/*.trx'
-            }
+            smstest testResultsFile: '**/TestResults/*.trx'
         }
     }
 }
