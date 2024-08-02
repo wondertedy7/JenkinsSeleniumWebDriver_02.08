@@ -55,7 +55,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: '**/TestResults/*.trx', allowEmptyArchive: true
-            smstest testResultsFile: '**/TestResults/*.trx'
+            junit '**/TestResults/*.trx'
         }
     }
 }
